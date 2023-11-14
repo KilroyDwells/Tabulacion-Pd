@@ -1,0 +1,57 @@
+//Al llamar a las variables alineadas abajo, se produce la tabulacion de datos, y su distribucion con respecto a los meses
+
+import pandas as pd
+entradas = pd.Series([11,18,12,16,9,16,22,28,31,29,30,12],
+                    index = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", 
+                             "sep", "oct", "nov", "dic"])
+entradas
+
+salidas = pd.Series([9,26,18,15,6,22,19,25,34,22,21,14],
+                    index = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", 
+                             "sep", "oct", "nov", "dic"])
+salidas
+
+almacén = pd.DataFrame({"entradas": entradas, "salidas": salidas})
+almacén["neto"]= almacén.entradas - almacén.salidas
+almacén
+
+entradas.head()
+
+almacén.head()
+
+entradas.tail()
+
+almacén.tail()
+
+entradas.sample()
+
+almacén.sample(5)
+
+almacén.describe()
+
+import numpy as np
+s = pd.Series([3,1,2,1,1,4,1,2, np.nan])
+print(s)
+s.value_counts()
+
+s.value_counts(bins = 2)
+
+import pandas as pd
+
+s = pd.Series([10,20,30,40])
+s
+
+s = pd.Series([10,20,30,40], index = ["a", "b", "c", "d"])
+s
+
+print(s["a"],s[0])
+print(s["d"],s[3])
+
+s = pd.Series([10,20,30,40], index = [3,2,1,0])
+s
+
+s[0]
+
+s = pd.Series([10,20,30,40], index = ["a","b","c","d"])
+
+s.iloc[1:-1]
